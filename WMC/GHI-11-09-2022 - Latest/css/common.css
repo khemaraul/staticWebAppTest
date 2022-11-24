@@ -1,0 +1,150 @@
+/* Legend like animated input field starts here ... */
+.input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 2.8 + 3px) calc(var(--size-bezel) * .5);
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background : var(--white);
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 2px solid var(--brown);
+    padding: calc(var(--size-bezel) * 1) var(--size-bezel);
+    color: var(--black);
+    background: transparent;
+    border-radius: var(--size-radius);
+}
+
+.input__field:not(:-moz-placeholder-shown) + .input__label{
+    transform: translate(0.25rem, -65%) scale(0.8);
+    color: var(--color-accent);
+}
+
+.input__field:not(:-ms-input-placeholder) + .input__label {
+    transform: translate(0.25rem, -65%) scale(0.8);
+    color: var(--color-accent);
+}
+
+.input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+    transform: translate(0.25rem, -65%) scale(0.8);
+    color: var(--color-accent);
+}
+/* Legend like animated input field ends here ... */
+
+/* Switch field starts here ... */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 34px;
+}
+  
+.switch .input-switch { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--lightgray);
+    -webkit-transition: .4s;
+    transition: .4s;
+    height: 4vh;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 3px;
+    background-color: var(--white);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.input-switch:checked + .slider {
+    background-color: var(--green);
+}
+  
+.input-switch + .slider {
+    box-shadow: 0 0 1px var(--skyblue);
+}
+  
+.input-switch:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+  
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+  
+.slider.round:before {
+    border-radius: 50%;
+}
+/* Switch field ends here ... */
+
+/* Autocomplete starts here ... */
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+  
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--mediumred);
+    border: 1px solid var(--mediumgray); 
+}
+  
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: var(--lightred);
+}
+  
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: var(--dodgerblue) !important; 
+    color: var(--white); 
+}
+  
+.strong-element{
+      font-weight: bold;
+      font-size: 13px;
+      padding: 0;
+}
+  
+.span-element{
+    font-size: 12px;
+    padding: 0;
+}
+/* Autocomplete ends here ... */
